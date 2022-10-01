@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<aiml version="2.0">
+
+<category>
+  <pattern>*</pattern>
+  <template>I don't understand. Please try writing "Start".</template>
+</category>
+
+<category>
+  <pattern>START</pattern>
+  <template>Hello there. I am a Career Advisor bot at Western Governor's University, but you can call me Career-Bot!<br/>
+  I am really looking forward to helping you choose your next career!<br/><br/>
+  If you would like to see which jobs I can recommend then type "Jobs".
+  Otherwise, type "Begin" to get started.</template>
+</category>
+
+<category>
+  <pattern>BEGIN</pattern>
+  <template>Let's begin then! Can you start with telling me your name? Use the format of "My name is..."</template>
+</category>
+
+<category>
+  <pattern>JOBS</pattern>
+  <template>I can recommend five jobs based on your responses. Those jobs are:<br/><br/>
+  Software Developer<br/>
+  Data Scientist<br/>
+  Chief Information Security Officer<br/>
+  User Interface Designer<br/>
+  Data Analyst<br/><br/>
+  Please type "Begin" to continue to the questions when ready.</template>
+</category>
+
+<category>
+  <pattern>HI</pattern>
+  <template><srai>START</srai></template>
+</category>
+
+<category>
+  <pattern>HELLO</pattern>
+  <template><srai>START</srai></template>
+</category>
+
+<category>
+  <pattern>HI THERE</pattern>
+  <template><srai>START</srai></template>
+</category>
+
+<category>
+  <pattern>MY NAME IS *</pattern>
+  <that>USE THE FORMAT OF MY NAME IS</that>
+  <template>It's nice to meet you <set name="name"><star/></set>.<br/>
+  I will begin asking questions. Please read them carefully and response truthfully.<br/><br/>
+  
+  Do you enjoy math?
+  </template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+        <that>DO YOU ENJOY MATH</that>
+        <template>Do you enjoy programming?</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+        <that>DO YOU ENJOY MATH</that>
+        <template>Do you enjoy UI programming?</template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+        <that>DO YOU ENJOY UI PROGRAMMING</that>
+        <template>Do you enjoy graphic design?</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+        <that>DO YOU ENJOY UI PROGRAMMING</that>
+        <template>Does cybersecurity interest you?</template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+        <that>DO YOU ENJOY GRAPHIC DESIGN</that>
+        <template>Sounds like you would enjoy being a Data Scientist!<br/>
+        Click the link below to learn more about this job!<br/><br/><br/>
+        https://kenzie.snhu.edu/blog/what-does-a-ui-designer-actually-do/</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+        <that>DO YOU ENJOY GRAPHIC DESIGN</that>
+        <template>Do you like to look at data?</template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+        <that>DO YOU ENJOY PROGRAMMING</that>
+        <template>Sounds like you would enjoy being a Software Developer!<br/>
+        Click the link below to learn more about this job!<br/><br/><br/>
+        https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+        <that>DO YOU ENJOY PROGRAMMING</that>
+        <template>Does Machine learning interest you?</template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+        <that>DOES MACHINE LEARNING INTEREST YOU</that>
+        <template>Sounds like you would enjoy being a Data Scientist!<br/>
+        Click the link below to learn more about this job!<br/><br/><br/>
+        https://www.techtarget.com/searchenterpriseai/definition/data-scientist</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+        <that>DOES MACHINE LEARNING INTEREST YOU</that>
+        <template>Do you like to look at data?</template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+        <that>DO YOU LIKE TO LOOK AT DATA</that>
+        <template>Do you enjoy visualizing data?</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+        <that>DO YOU LIKE TO LOOK AT DATA</that>
+        <template>Does cybersecurity interest you?</template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+        <that>DO YOU ENJOY VISUALIZING DATA</that>
+        <template>Sounds like you would enjoy being a Data Analyst!<br/>
+        Click the link below to learn more about this job!<br/><br/><br/>
+        https://www.coursera.org/articles/what-does-a-data-analyst-do-a-career-guide</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+        <that>DO YOU ENJOY VISUALIZING DATA</that>
+        <template>Does cybersecurity interest you?</template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+        <that>DOES CYBERSECURITY INTEREST YOU</that>
+        <template>Does the idea of working on company policy seem enjoyable to you?</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+        <that>DOES CYBERSECURITY INTEREST YOU</that>
+        <template>Unfortunately I wasn't able to find a job in my database for you.
+        Say "restart" to try again!</template>
+</category>
+
+<category>
+    <pattern>YES</pattern>
+        <that>DOES THE IDEA OF WORKING ON COMPANY POLICY SEEM ENJOYABLE TO YOU</that>
+        <template>Sounds like you would enjoy being a Chief Information Security Officer!<br/>
+        Click the link below to learn more about this job!<br/><br/><br/>
+        https://www.techtarget.com/searchsecurity/definition/CISO-chief-information-security-officer</template>
+</category>
+
+<category>
+    <pattern>NO</pattern>
+        <that>DOES THE IDEA OF WORKING ON COMPANY POLICY SEEM ENJOYABLE TO YOU</that>
+        <template>Unfortunately I wasn't able to find a job in my database for you.
+        Say "restart" to try again!</template>
+</category>
+
+<category>
+    <pattern>RESTART</pattern>
+        <template>Let's try that again, <get name="name"/>.<br/><br/><br/>Do you enjoy math?</template>
+</category>
+
+<category>
+  <pattern>WHAT IS MY NAME</pattern>
+  <template>It's <get name="name"/>. <br/>You didn't think I'd remember, did you?</template>
+</category>
+
+</aiml>
